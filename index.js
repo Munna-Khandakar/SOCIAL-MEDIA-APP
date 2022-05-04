@@ -5,7 +5,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
-
+const postRoute = require("./routes/posts");
 // main app initialization
 const app = express();
 dotenv.config();
@@ -27,6 +27,7 @@ app.use(morgan("common"));
 // routes
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/posts", postRoute);
 
 // app listenning ...
 app.listen(5000, () => {
